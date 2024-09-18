@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page</title>
+</head>
+<body>
+
+    <h1>Welcome to the Website!</h1>
+
+    <p>{{ message }}</p>
+
+    <h3>Liczba spotkań: {{ num_meetings }}</h3>
+
+    <h2>Spotkania:</h2>
+
+    <ul>
+        {% for meetings in meeting %}
+            <li>{{ meetings.title }}</li>
+        {% empty %}
+            <li>Brak dostępnych spotkań.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

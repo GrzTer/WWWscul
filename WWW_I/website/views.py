@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from datetime import datetime
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from website.models import Meeting
 
 
@@ -17,6 +17,9 @@ def welcome(request):
         },
     )
 
+def detail(request, id):
+    meeting=get_object_or_404(Meeting,pk=id)
+    return render(request, "website/detail.html",{"meeting": meeting})
 
 def date(request):
     return HttpResponse("This page was served at " + str(datetime.now()))

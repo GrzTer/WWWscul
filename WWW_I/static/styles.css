@@ -1,0 +1,33 @@
+body {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3 {
+    color: #343a40;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+li:hover {
+    background-color: #e9ecef;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+}

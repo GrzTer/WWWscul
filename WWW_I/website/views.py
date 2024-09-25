@@ -17,9 +17,11 @@ def welcome(request):
         },
     )
 
+
 def detail(request, id):
-    meeting=get_object_or_404(Meeting,pk=id)
-    return render(request, "website/detail.html",{"meeting": meeting})
+    meeting = get_object_or_404(Meeting, pk=id)
+    return render(request, "website/detail.html", {"meeting": meeting})
+
 
 def date(request):
     return HttpResponse("This page was served at " + str(datetime.now()))

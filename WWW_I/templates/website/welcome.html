@@ -1,25 +1,34 @@
-<!DOCTYPE html>
-<html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <title>Welcome Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
 </head>
 <body>
 
-    <h1>Welcome to the Website!</h1>
+    <div class="container">
+        <h1 class="display-4 text-center my-4">Welcome to the Website!</h1>
 
-    <p>{{ message }}</p>
+        <div class="alert alert-info">
+            <p>{{ message }}</p>
+        </div>
 
-    <h3>Liczba spotkań: {{ num_meetings }}</h3>
+        <h3 class="text-secondary">Liczba spotkań: {{ num_meetings }}</h3>
 
-    <h2>Spotkania:</h2>
+        <h2 class="my-4">Spotkania:</h2>
 
-    <ul>
-        {% for meetings in meeting %}
-            <li>{{ meetings.title }}</li>
-        {% empty %}
-            <li>Brak dostępnych spotkań.</li>
-        {% endfor %}
-    </ul>
+        <ul class="list-group">
+            {% for meetings in meeting %}
+                <li class="list-group-item">{{ meetings.title }}</li>
+            {% empty %}
+                <li class="list-group-item text-muted">Brak dostępnych spotkań.</li>
+            {% endfor %}
+        </ul>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>

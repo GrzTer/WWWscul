@@ -1,0 +1,10 @@
+<h1>Good doctor</h1>
+    <p>Masz umówione {{ num_wizyt }} wizyty</p>
+<h2>Lista Twoich pacjentów</h2>
+    <ol>
+        {% for pacjenci in all_pacjenci %}
+            <li>{{ pacjenci.imie }} {{ pacjenci.nazwisko }}</li>
+        {% empty %}
+            <li>Brak Pacjentów.</li>
+        {% endfor %}
+    </ol>

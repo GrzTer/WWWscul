@@ -17,9 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from GoodDoctor.views import num_wizyt
+from GoodDoctor.views import num_wizyt, details
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", num_wizyt),
+    path("detail/<int:id>", details),
 ]

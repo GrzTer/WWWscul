@@ -22,5 +22,5 @@ from GoodDoctor.views import num_wizyt, details
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", num_wizyt),
-    path("detail/<int:id>", details),
+    path("details/<int:id>", details),
 ]

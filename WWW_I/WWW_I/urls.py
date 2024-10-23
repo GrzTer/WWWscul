@@ -17,12 +17,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from website.views import welcome, date, me, detail
+from website.views import welcome, date, me, detail, room_list
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", welcome),
+    path("", welcome, name="welcome"),
     path("date", date),
     path("me", me),
-    path("detail/<int:id>", detail),
+    path("detail/<int:id>", detail, name="detail"),
+
+    path("room", room_list, name="room"),
 ]

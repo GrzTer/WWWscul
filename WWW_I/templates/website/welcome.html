@@ -22,11 +22,16 @@
 
         <ul class="list-group">
             {% for meetings in meeting %}
-                <li class="list-group-item">{{ meetings.title }}</li>
+                <a href="{% url "detail" meetings.id %}"><li class="list-group-item">{{ meetings.id }}. {{ meetings.title }}</li></a>
             {% empty %}
                 <li class="list-group-item text-muted">Brak dostępnych spotkań.</li>
             {% endfor %}
         </ul>
+        <div class="card">
+            <div class="card-body">
+                <a href="{% url 'room' %}"  class="btn btn-primary"> Zobacz opis pokoi </a>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

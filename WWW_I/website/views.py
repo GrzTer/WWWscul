@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import render, get_object_or_404
-from website.models import Meeting
+from website.models import Meeting, Room
 
 
 def welcome(request):
@@ -31,3 +31,7 @@ def me(request):
     start_time = datetime(2024, 9, 11, 9, 20)
     total_time = datetime.now() - start_time
     return HttpResponse("This is me working on this project for: " + str(total_time))
+
+def room_list(request):
+    room = Room.objects.all()
+    return render(request, "website/room_list.html", {"room": room})

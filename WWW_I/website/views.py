@@ -1,6 +1,8 @@
+
 from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import render, get_object_or_404
+
 from website.models import Meeting, Room
 
 

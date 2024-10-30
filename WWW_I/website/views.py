@@ -37,3 +37,4 @@ def me(request):
 def room_list(request):
     room = Room.objects.all()
     return render(request, "website/room_list.html", {"room": room})
+# // Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.

@@ -1,0 +1,13 @@
+<h1>Good doctor</h1>
+<p>Lista</p>
+<ol>
+  {% for pacjenci in all_pacjenci %}
+      <li>{{ pacjenci.imie }} {{ pacjenci.nazwisko }}</li>
+  {% empty %}
+  <li>Brak Pacjentów.</li>
+  {% endfor %}
+</ol>
+
+<footer>
+    {% include "./footer.html" %}
+</footer>

@@ -6,3 +6,4 @@ urlpatterns = [
 
     path("room", views.room_list, name="room"),
 ]
+# // Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.

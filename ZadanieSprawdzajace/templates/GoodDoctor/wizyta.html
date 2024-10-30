@@ -1,11 +1,17 @@
-{% load compress %} {% load static %}
 <h1>Good doctor</h1>
 <p>Masz umówione {{ num_wizyt }} wizyty</p>
-<h2>Lista Twoich pacjentów</h2>
-<ol>
-  {% for pacjenci in all_pacjenci %}
-  <li>{{ pacjenci.imie }} {{ pacjenci.nazwisko }}</li>
+<ul>
+  {% for wizyty in all_wizyty %}
+    <a href="{% url "details" wizyty.id %}">
+      <li>{{ wizyty.date }} {{ wizyty.pacjent.nazwisko }}</li>
+    </a>
   {% empty %}
   <li>Brak Pacjentów.</li>
   {% endfor %}
-</ol>
+</ul>
+<a href="{% url "pacjenci" %}">
+    <h2>Lista Twoich pacjentów</h2>
+</a>
+<footer>
+    {% include "./footer.html" %}
+</footer>

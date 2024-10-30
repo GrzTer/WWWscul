@@ -1,5 +1,6 @@
-<h1>Good doctor</h1>
-<p>Masz umówione {{ num_wizyt }} wizyty</p>
+<header>
+    {% include "./header.html" %}
+</header>
 <ul>
   {% for wizyty in all_wizyty %}
     <a href="{% url "details" wizyty.id %}">

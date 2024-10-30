@@ -1,11 +1,32 @@
-<h1>
-  Pacjent {{ details.imie }} {{ details.nazwisko }}
-</h1>
-<h2>Wiek: {{ details.wiek }}</h2>
-<h3>Zamieszkały w {{ details.miasto }}, ulica {{ details.ulica }}</h3>
+<head>
+    {% include "./head.html" %}
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
 
+<header class="bg-blue-600 text-white py-4 shadow-md">
+    <div class="container mx-auto">
+        {% include "./header.html" %}
+    </div>
+</header>
 
-<footer>
-    {% include "./footer.html" %}
-    <button type="button" class="btn btn-primary" onclick="window.location.href = '/';">Home</button>
+<main class="container mx-auto my-8 p-4 bg-white shadow rounded">
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">
+        Pacjent: {{ details.imie }} {{ details.nazwisko }}
+    </h1>
+    <h2 class="text-xl font-semibold text-gray-700 mb-2">
+        Wiek: {{ details.wiek }}
+    </h2>
+    <h3 class="text-lg text-gray-600 mb-6">
+        Zamieszkały w {{ details.miasto }}, ulica {{ details.ulica }}
+    </h3>
+</main>
+
+<footer class="bg-gray-800 text-gray-200 py-4 mt-8">
+    <div class="container mx-auto text-center">
+        {% include "./footer.html" %}
+        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                onclick="window.location.href = '/';">Home</button>
+    </div>
 </footer>
+
+</body>

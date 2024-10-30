@@ -1,18 +1,39 @@
-<header>
-    {% include "./header.html" %}
+<head>
+{% include "./head.html" %}
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+<header class="bg-blue-600 text-white py-4 shadow-md">
+    <div class="container mx-auto">
+        {% include "./header.html" %}
+    </div>
 </header>
-<ul>
-  {% for wizyty in all_wizyty %}
-    <a href="{% url "details" wizyty.id %}">
-      <li>{{ wizyty.date }} {{ wizyty.pacjent.nazwisko }}</li>
-    </a>
-  {% empty %}
-  <li>Brak Pacjentów.</li>
-  {% endfor %}
-</ul>
-<a href="{% url "pacjenci" %}">
-    <h2>Lista Twoich pacjentów</h2>
-</a>
-<footer>
-    {% include "./footer.html" %}
+
+<main class="container mx-auto my-8 p-4 bg-white shadow rounded">
+    <ul class="divide-y divide-gray-300">
+        {% for wizyty in all_wizyty %}
+            <a href="{% url "details" wizyty.id %}">
+                <li class="p-4 hover:bg-blue-100 flex justify-between items-center">
+                    <span class="text-lg font-semibold">{{ wizyty.date }}</span>
+                    <span class="text-gray-700">{{ wizyty.pacjent.nazwisko }}</span>
+                </li>
+            </a>
+        {% empty %}
+            <li class="p-4 text-gray-500">Brak Wizyt</li>
+        {% endfor %}
+    </ul>
+
+    <div class="mt-6 text-center">
+        <a href="{% url "pacjenci" %}" class="text-blue-500 hover:text-blue-700 font-bold text-xl">
+            Lista Twoich pacjentów
+        </a>
+    </div>
+</main>
+
+<footer class="bg-gray-800 text-gray-200 py-4 mt-8">
+    <div class="container mx-auto text-center">
+        {% include "./footer.html" %}
+    </div>
 </footer>
+
+</body>

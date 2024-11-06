@@ -25,3 +25,5 @@ urlpatterns = [
     path("me", me),
     path("website/", include('website.urls')),
 ]
+
+# // Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.

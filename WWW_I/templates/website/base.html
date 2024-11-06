@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>{% block title %}My Website{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'image/icons8-favicon-32.ico' %}" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <div class="container mx-auto flex items-center p-4">
+            <img src="{% static 'image/icons8-timeline-week-100.png' %}" alt="Logo" class="h-10 mr-3">
+            <h1 class="text-black text-2xl font-semibold">{% block header_title %}My Website{% endblock %}</h1>
+        </div>
+    </header>
+
+    <div class="container mx-auto mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="container mx-auto mt-4 p-4 border-t text-center">
+        &copy; 2024 Grzegorz Tereszkiewicz. All rights reserved.
+    </footer>
+
+</body>
+</html>
+{#// Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.#}

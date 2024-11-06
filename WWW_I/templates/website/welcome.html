@@ -1,40 +1,35 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <title>Welcome Page</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+{% extends 'website/base.html' %}
 
-</head>
-<body>
+{% block title %}Welcome Page{% endblock %}
 
-    <div class="container">
-        <h1 class="display-4 text-center my-4">Welcome to the Website!</h1>
+{% block content %}
 
-        <div class="alert alert-info">
-            <p>{{ message }}</p>
-        </div>
+<h1 class="text-5xl text-center my-4">Welcome to the Website!</h1>
 
-        <h3 class="text-secondary">Liczba spotkań: {{ num_meetings }}</h3>
+<div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4">
+    <p>{{ message }}</p>
+</div>
 
-        <h2 class="my-4">Spotkania:</h2>
+<h3 class="text-gray-600 mt-4">Liczba spotkań: {{ num_meetings }}</h3>
 
-        <ul class="list-group">
-            {% for meetings in meeting %}
-                <a href="{% url "detail" meetings.id %}"><li class="list-group-item">{{ meetings.id }}. {{ meetings.title }}</li></a>
-            {% empty %}
-                <li class="list-group-item text-muted">Brak dostępnych spotkań.</li>
-            {% endfor %}
-        </ul>
-        <div class="card">
-            <div class="card-body">
-                <a href="{% url 'room' %}"  class="btn btn-primary" > Zobacz opis pokoi </a>
-            </div>
-        </div>
+<h2 class="my-4 text-2xl font-semibold">Spotkania:</h2>
+
+<ul class="bg-white shadow rounded-lg divide-y divide-gray-200">
+    {% for meetings in meeting %}
+        <li>
+            <a href="{% url 'detail' meetings.id %}" class="block px-4 py-2 hover:bg-gray-100">
+                {{ meetings.id }}. {{ meetings.title }}
+            </a>
+        </li>
+    {% empty %}
+        <li class="px-4 py-2 text-gray-500">Brak dostępnych spotkań.</li>
+    {% endfor %}
+</ul>
+
+<div class="bg-white rounded shadow mt-4">
+    <div class="p-4">
+        <a href="{% url 'room' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Zobacz opis pokoi</a>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+</div>
+{% endblock %}
 {#// Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.#}

@@ -12,7 +12,7 @@
 <main class="container mx-auto my-8 p-4 bg-white shadow rounded">
     <ul class="divide-y divide-gray-300">
         {% for wizyty in all_wizyty %}
-            <a href="{% url "details" wizyty.id %}">
+            <a href="{% url "details" wizyty.pacjent.id %}">
                 <li class="p-4 hover:bg-blue-100 flex justify-between items-center">
                     <span class="text-lg font-semibold">{{ wizyty.date }}</span>
                     <span class="text-gray-700">{{ wizyty.pacjent.nazwisko }}</span>
@@ -30,7 +30,7 @@
     </div>
 </main>
 
-<footer class="bg-gray-800 text-gray-200 py-4 mt-8">
+<footer class="bg-gray-800 text-gray-200 py-4 mt-8 ">
     <div class="container mx-auto text-center">
         {% include "./footer.html" %}
     </div>

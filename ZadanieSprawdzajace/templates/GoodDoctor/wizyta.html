@@ -1,15 +1,5 @@
-<head>
-{% include "./head.html" %}
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-
-<header class="bg-blue-600 text-white py-4 shadow-md">
-    <div class="container mx-auto">
-        {% include "./header.html" %}
-    </div>
-</header>
-
-<main class="container mx-auto my-8 p-4 bg-white shadow rounded">
+{% extends 'GoodDoctor/base.html' %}
+{% block content %}
     <ul class="divide-y divide-gray-300">
         {% for wizyty in all_wizyty %}
             <a href="{% url "details" wizyty.pacjent.id %}">
@@ -28,12 +18,6 @@
             Lista Twoich pacjentów
         </a>
     </div>
-</main>
+{% endblock %}
 
-<footer class="bg-gray-800 text-gray-200 py-4 mt-8 ">
-    <div class="container mx-auto text-center">
-        {% include "./footer.html" %}
-    </div>
-</footer>
-
-</body>
+{#// Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.#}

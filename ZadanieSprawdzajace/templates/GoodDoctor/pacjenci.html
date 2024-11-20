@@ -1,33 +1,14 @@
-<head>
-    {% include "./head.html" %}
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-
-<header class="bg-blue-600 text-white py-4 shadow-md">
-    <div class="container mx-auto">
-        {% include "./header.html" %}
-    </div>
-</header>
-
-<main class="container mx-auto my-8 p-4 bg-white shadow rounded">
+{% extends 'GoodDoctor/base.html' %}
+{% block content %}
     <ol class="divide-y divide-gray-300">
         {% for pacjenci in all_pacjenci %}
-            <li class="p-4 hover:bg-blue-100 flex justify-between items-center">
-                <span class="text-lg font-semibold">{{ pacjenci.imie }}</span>
-                <span class="text-gray-700">{{ pacjenci.nazwisko }}</span>
-            </li>
+            <li class="p-4 hover:bg-blue-100 flex justify-between items-center text-center ">
+                <span class="text-lg font-semibold">{{ pacjenci.imie }} {{ pacjenci.nazwisko }}</span></li>
         {% empty %}
             <li class="p-4 text-gray-500">Brak Pacjentów.</li>
         {% endfor %}
     </ol>
-</main>
 
-<footer class="bg-gray-800 text-gray-200 py-4 mt-8">
-    <div class="container mx-auto text-center">
-        {% include "./footer.html" %}
-        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                onclick="window.location.href = '/';">Home</button>
-    </div>
-</footer>
+{% endblock %}
 
-</body>
+{#// Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.#}

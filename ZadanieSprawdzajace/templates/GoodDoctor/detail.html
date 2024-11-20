@@ -1,15 +1,5 @@
-<head>
-    {% include "./head.html" %}
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-
-<header class="bg-blue-600 text-white py-4 shadow-md">
-    <div class="container mx-auto">
-        {% include "./header.html" %}
-    </div>
-</header>
-
-<main class="container mx-auto my-8 p-4 bg-white shadow rounded">
+{% extends 'GoodDoctor/base.html' %}
+{% block content %}
     <h1 class="text-3xl font-bold text-gray-800 mb-4">
         Pacjent: {{ details.imie }} {{ details.nazwisko }}
     </h1>
@@ -19,14 +9,6 @@
     <h3 class="text-lg text-gray-600 mb-6">
         Zamieszkały w {{ details.miasto }}, ulica {{ details.ulica }}
     </h3>
-</main>
+{% endblock %}
 
-<footer class="bg-gray-800 text-gray-200 py-4 mt-8">
-    <div class="container mx-auto text-center">
-        {% include "./footer.html" %}
-        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                onclick="window.location.href = '/';">Home</button>
-    </div>
-</footer>
-
-</body>
+{#// Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.#}

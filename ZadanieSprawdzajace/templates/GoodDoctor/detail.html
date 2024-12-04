@@ -1,14 +1,53 @@
 {% extends 'GoodDoctor/base.html' %}
 {% block content %}
     <h1 class="text-3xl font-bold text-gray-800 mb-4">
-        Pacjent: {{ details.imie }} {{ details.nazwisko }}
+        Pacjent: {{ detail.imie }} {{ detail.nazwisko }}
     </h1>
     <h2 class="text-xl font-semibold text-gray-700 mb-2">
-        Wiek: {{ details.wiek }}
+        Wiek: {{ detail.wiek }}
     </h2>
     <h3 class="text-lg text-gray-600 mb-6">
-        Zamieszkały w {{ details.miasto }}, ulica {{ details.ulica }}
+        Zamieszkały w {{ detail.miasto }}, ulica {{ detail.ulica }}
     </h3>
+    
+    <h4 class="text-lg text-gray-800 mb-4 font-semibold">Zalecenia:</h4>
+    {% if wizyty %}
+        <ul class="list-disc pl-6 text-gray-600">
+            {% for wizyta in wizyty %}
+                <li>
+                    <span class="font-bold text-gray-700">Data:</span> {{ wizyta.date }}<br>
+                    <span class="font-bold text-gray-700">Zalecenia:</span> {{ wizyta.zalecenia }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-gray-500">Brak zaleceń dla tego pacjenta.</p>
+    {% endif %}
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {#// Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.#}

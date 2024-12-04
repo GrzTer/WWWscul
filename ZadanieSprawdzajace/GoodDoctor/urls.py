@@ -6,4 +6,6 @@ from . import views
 urlpatterns = [
     path("details/<int:id>", views.details, name="details"),
     path("pacjenci/", views.pacjenci, name="pacjenci"),
+    path("new", views.new, name="new"),
+
 ]

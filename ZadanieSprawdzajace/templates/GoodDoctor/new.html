@@ -1,0 +1,20 @@
+{% extends 'GoodDoctor/base.html' %}
+
+{% block title %}Meeting Page{% endblock %}
+
+{% block content %}
+
+    <h1>Planowanie nowej wizyty</h1>
+    <form method="POST">
+        <table>
+            {{ form }}
+        </table>
+    {% csrf_token %}
+    <button type="submit">Dodaj</button>
+    </form>
+    <div class="bg-white rounded border">
+        <div class="p-5">
+            <a href="{% url '' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Powrót</a>
+        </div>
+    </div>
+{% endblock %}

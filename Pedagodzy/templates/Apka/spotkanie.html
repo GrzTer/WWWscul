@@ -1,0 +1,54 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Spotkania{% endblock %}
+
+{% block content %}
+
+<h1 class="text-5xl text-center my-4">Spotkania</h1>
+
+<h3 class="text-gray-600">Liczba pokoi: {{ room.count }}</h3>
+<>
+<div class="bg-white rounded shadow mt-4">
+    <div class="p-4">
+        <a href="{% url 'pedagodzy' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nasi Pedagodzy</a>
+        <a href="{% url 'uczniowie' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nasi Podopieczni</a>
+    </div>
+</div>
+</>
+<div class="bg-white rounded shadow mt-4">
+    <div class="p-4">
+        <a href="{% url 'glowna' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Powrót</a>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#// Copyright (c) 2024 Grzegorz Tereszkiewicz all rights reserved.#}

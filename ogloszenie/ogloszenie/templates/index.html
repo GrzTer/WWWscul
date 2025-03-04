@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Django Site with Tailwind</title>
+  <title>Ogłoszenia</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
@@ -15,20 +15,22 @@
     <p class="mt-4 text-gray-700 text-center">
         Liczba ogłoszeń: {{ ogloszenia_l }}
     </p>
-    {#        Jeżeli używasz mojego GitHub'a, daj gwiazdkę do używanych repozytoriów.#}
+    {#        Daj gwiazdkę do używanych repozytoriów.#}
     <ul class="mt-8">
       {% for ogloszenie in ogloszenia %}
-        <li class="mb-4 p-4 bg-white rounded shadow">
+        <li class="mb-4 p-4 bg-white rounded shadow text-center">
           <h2 class="text-xl font-semibold">{{ ogloszenie.tytul }}</h2>
-          <p class="mt-2 text-gray-600">{{ ogloszenie.tresc }}</p>
+          <a href="{% url 'tresc' pk=ogloszenie.pk %}"><p class="mt-2 text-gray-600 underline">Szczegóły ogłoszenia</p></a>
           <p class="mt-2 text-sm text-gray-500">
             Author: {{ ogloszenie.uzytkownik.imie }} {{ ogloszenie.uzytkownik.nazwisko }}
           </p>
         </li>
       {% empty %}
-        <li class="p-4 text-center text-gray-500">Zero ogłoszeń.</li>
+        <li class="p-4 text-center text-gray-500">Brak treści</li>
       {% endfor %}
     </ul>
+   <a href="{% url 'index' %}"><p class="mt-2 text-center text-gray-600 underline">Pokaż wszystkich Użytkownikóœ</p></a>
+   <a href="{% url 'ksiazki' %}"><p class="mt-2 text-center text-gray-600 underline">Pokaż książki</p></a>
   </div>
 </body>
 </html>

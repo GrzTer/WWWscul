@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ogłoszenia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold underline text-center text-blue-600">
+        Ksiązki
+    </h1>
+    {#        Daj gwiazdkę do używanych repozytoriów.#}
+    <article class="mt-8">
+        <div class="mb-4 p-4 bg-white rounded shadow text-center">
+          <h2 class="text-4xl font-semibold">{{ ksiazka.tytul }}</h2>
+          <p class="mt-2 text-2xl text-gray-600">{{ ksiazka.tresc }}</p>
+          <p class="mt-2 text-xl text-gray-500">
+            Author: {{ ksiazka.uzytkownik.imie }} {{ ksiazka.uzytkownik.nazwisko }}
+          </p>
+        </div>
+    </article>
+           <a href="{% url 'index' %}"><p class="mt-2 text-center text-gray-600 underline">Strona Główna</p></a>
+  </div>
+</body>
+</html>

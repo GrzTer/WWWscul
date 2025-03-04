@@ -13,8 +13,10 @@ def tresc(request, pk):
 
 def ksiazki(request):
     ksiazka = Ogloszenia.objects.filter(kategoria=1)
-    return render(request, 'ksiazki.html', {'ksiazka': ksiazka})
+    ksiazka_count = Ogloszenia.objects.filter(kategoria=1).count()
+    return render(request, 'ksiazki.html', {'ksiazka': ksiazka, 'ksiazka_count': ksiazka_count})
 
 def uzytkownik(request):
     dane = Uzytkownik.objects.all()
-    return render(request, 'uzytkownik.html', {'dane': dane})
+    uzytkownik_l = Uzytkownik.objects.count()
+    return render(request, 'uzytkownik.html', {'dane': dane, 'uzytkownik_l': uzytkownik_l})

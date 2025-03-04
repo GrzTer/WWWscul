@@ -10,13 +10,13 @@
 <body class="bg-gray-100">
   <div class="container mx-auto p-4">
     <h1 class="text-3xl font-bold underline text-center text-blue-600">
-        Ksiązki
+        Ksiązki: {{ ksiazka_count }}
     </h1>
     {#        Daj gwiazdkę do używanych repozytoriów.#}
-    <ul class="mt-8">
+    <ol class="mt-8">
       {% for k in ksiazka %}
         <li class="mb-4 p-4 bg-white rounded shadow text-center">
-          <h2 class="text-xl font-semibold">{{ k.tytul }}</h2>
+          <h2 class="text-xl font-semibold">{{ k.tytul|upper }}</h2>
           <p class="mt-2 text-sm text-gray-500">
             Author: {{ k.uzytkownik.imie }} {{ k.uzytkownik.nazwisko }}
           </p>
@@ -24,7 +24,7 @@
       {% empty %}
         <li class="p-4 text-center text-gray-500">Brak treści</li>
       {% endfor %}
-    </ul>
+    </ol>
         </div>
     </article>
            <a href="{% url 'index' %}"><p class="mt-2 text-center text-gray-600 underline">Strona Główna</p></a>

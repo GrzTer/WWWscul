@@ -10,10 +10,10 @@
 <body class="bg-gray-100">
   <div class="container mx-auto p-4">
     <h1 class="text-3xl font-bold underline text-center text-blue-600">
-      Uzytkownik
+      Uzytkownik: {{ uzytkownik_l }}
     </h1>
     {#        Daj gwiazdkę do używanych repozytoriów.#}
-    <ul class="mt-8">
+    <ol class="mt-8">
       {% for d in dane %}
         <li class="mb-4 p-4 bg-white rounded shadow text-center">
           <h2 class="text-xl font-semibold">{{ d.imie }} {{ d.nazwisko }}</h2>
@@ -23,7 +23,7 @@
       {% empty %}
         <li class="p-4 text-center text-gray-500">Brak uzytkownikow</li>
       {% endfor %}
-    </ul>
+    </ol>
       <a href="{% url 'index' %}"><p class="mt-2 text-center text-gray-600 underline">Strona Główna</p></a>
   </div>
 </body>

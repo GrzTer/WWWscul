@@ -8,36 +8,33 @@
     <link rel="stylesheet" href="{% static 'stle.css' %}">
 </head>
 <body>
+<h1>Portal dla wędkarzy</h1>
+<img src="{% static 'ryba.jpg' %}" alt="ryby">
+<p>
+    Pole styl_zycia przyjmuje wartość 1 dla drapieżników, wartość 2 dla ryb spokojnego żeru.
+</p>
+<h2>Lista ryb:</h2>
+<ol>
+    {% for ryba in ryby %}
+        <li>{{ ryba.nazwa }}</li>
+    {% empty %}
+        <li>Brak ryb w bazie danych.</li>
+    {% endfor %}
+</ol>
 
-    <h1>Portal dla wędkarzy</h1>
-
-    <img src="{% static 'ryba.jpg' %}" alt="ryby">
-
-    <p>
-        Pole styl_zycia przyjmuje wartość 1 dla drapieżników, wartość 2 dla ryb spokojnego żeru.
-    </p>
-
-    <h2>Lista ryb:</h2>
-    <ol>
-        {% for ryba in ryby %}
-            <li>{{ ryba.nazwa }}</li>
-        {% empty %}
-            <li>Brak ryb w bazie danych.</li>
-        {% endfor %}
-    </ol>
-
-    <h2>Okresy ochronne:</h2>
-    <ul>
-        {% for okres in okres_ochronny %}
-            {% if okres.wymiar_ochronny != 0 %}
-                <li>{{ okres.ryby_id.nazwa }}: od {{ okres.od_miesiaca }} do {{ okres.do_miesiaca }}, Wymiar ochronny: {{ okres.wymiar_ochronny }}</li>
-            {% else %}
-                <li>{{ okres.ryby_id.nazwa }}: Okres ochronny brak wymiaru ochronnego.</li>
-            {% endif %}
-        {% empty %}
-            <li>Brak okresów ochronnych w bazie danych.</li>
-        {% endfor %}
-    </ul>
+<h2>Okresy ochronne:</h2>
+<ul>
+    {% for okres in okres_ochronny %}
+        {% if okres.wymiar_ochronny != 0 %}
+            <li>{{ okres.ryby_id.nazwa }}: od {{ okres.od_miesiaca }} do {{ okres.do_miesiaca }}, Wymiar
+                ochronny: {{ okres.wymiar_ochronny }}</li>
+        {% else %}
+            <li>{{ okres.ryby_id.nazwa }}: Okres ochronny brak wymiaru ochronnego.</li>
+        {% endif %}
+    {% empty %}
+        <li>Brak okresów ochronnych w bazie danych.</li>
+    {% endfor %}
+</ul>
 
 </body>
 </html>

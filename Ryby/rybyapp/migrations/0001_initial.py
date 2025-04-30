@@ -8,27 +8,47 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Ryby',
+            name="Ryby",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nazwa', models.CharField(max_length=255)),
-                ('wystepowanie', models.CharField(max_length=255)),
-                ('styl_zycia', models.PositiveIntegerField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nazwa", models.CharField(max_length=255)),
+                ("wystepowanie", models.CharField(max_length=255)),
+                ("styl_zycia", models.PositiveIntegerField()),
             ],
         ),
         migrations.CreateModel(
-            name='OkresOchronny',
+            name="OkresOchronny",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('od_miesiaca', models.IntegerField()),
-                ('do_miesiaca', models.IntegerField()),
-                ('wymiar_ochronny', models.IntegerField()),
-                ('ryby_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='rybyapp.ryby')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("od_miesiaca", models.IntegerField()),
+                ("do_miesiaca", models.IntegerField()),
+                ("wymiar_ochronny", models.IntegerField()),
+                (
+                    "ryby_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="rybyapp.ryby"
+                    ),
+                ),
             ],
         ),
     ]

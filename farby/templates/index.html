@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Lista Farb</title>
+</head>
+<body>
+    <h1>Lista Farb</h1>
+    <table>
+        <tr>
+            <th>Kolor</th>
+            <th>Cena</th>
+            <th>Pojemność</th>
+        </tr>
+        {% for paint in paints %}
+        <tr>
+            <td>{{ paint.color }}</td>
+            <td>{{ paint.price }}</td>
+            <td>{{ paint.capacity }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">Brak farb w bazie.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

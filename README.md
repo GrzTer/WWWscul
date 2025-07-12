@@ -27,9 +27,11 @@ Each top-level folder is an independent mini-application that can be run and stu
 
 URLs:
 
-""              → list of meetings
+```
+/              → list of meetings
 room/           → list of rooms
 new/            → add a meeting
+```
 
 ---
 

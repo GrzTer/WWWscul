@@ -56,7 +56,27 @@ new/            → add a meeting
 
 ## Repository Layout
 
-WWWscul/ ├── WWW_I/                 # Conference Room Manager │   ├── website/           # Django app (models, views, urls, templates, static) │   └── manage.py ├── ZadanieSprawdzajace/   # GoodDoctor │   ├── GoodDoctor/        # Django app │   └── manage.py ├── DjangoProject/         # Smaller demo ├── Ogloshenia/            # Lab exercise (announcements) ├── Pedagodzy/             # Lab exercise (teachers) ├── Ryby/                  # Lab exercise (fish database) ├── farby/ ogloszenie/ tst/# Misc. practice code └── README.md              # You are here
+WWWscul/
+├── DjangoProject/
+├── Ogloshenia/
+├── Pedagodzy/
+├── Ryby/
+├── WWW_I/                    # Conference-room project
+│   ├── website/
+│   ├── templates/
+│   ├── static/
+│   └── manage.py
+├── ZadanieSprawdzajace/      # “GoodDoctor” medical project
+│   ├── GoodDoctor/
+│   ├── templates/
+│   ├── static/
+│   └── manage.py
+├── farby/
+├── ogloszenie/
+├── tst/
+├── .gitattributes
+└── README.md
+
 
 ---
 

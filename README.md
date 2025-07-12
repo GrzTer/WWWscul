@@ -55,7 +55,7 @@ new/            → add a meeting
 ---
 
 ## Repository Layout
-
+```
 WWWscul/
 ├── DjangoProject/
 ├── Ogloshenia/
@@ -76,7 +76,7 @@ WWWscul/
 ├── tst/
 ├── .gitattributes
 └── README.md
-
+```
 
 ---
 
@@ -92,7 +92,7 @@ pip install django
 python manage.py migrate
 python manage.py createsuperuser   # optional
 python manage.py runserver
-
+```
 
 ---
 

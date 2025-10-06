@@ -1,5 +1,5 @@
 """
-WSGI config for grzyby project.
+WSGI config for grzyby_zad project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'grzyby.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'grzyby_zad.settings')
 
 application = get_wsgi_application()

@@ -1,0 +1,19 @@
+body{
+    background: deepskyblue;
+    justify-content: center;
+}
+
+table{
+    border: solid 1px;
+}
+
+td{
+    border: solid 1px;
+}
+
+form{
+    text: bold;
+    input {
+        border: solid 1px;  
+    }
+}

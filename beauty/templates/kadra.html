@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <ol>
+        {% for pracownik in kadry %}
+        <li>{{ pracownik.stanowisko }} - {{ pracownik.imie }} {{ pracownik.nazwisko }}</li>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'new' %}">Dodaj nowego pracownika</a>
+    <br>
+    <a href="{% url 'welcome' %}">Powrót do strony głównej</a>
+{% endblock %}

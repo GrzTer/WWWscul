@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Nasza oferta</h1>
+    <ol>
+        {% for samochod in samochody %}
+            <li>{{ samochod.marka }} {{ samochod.model }} - rocznik: {{ samochod.rocznik }}</li>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'new' %}">Dodaj nowy</a>
+{% endblock %}

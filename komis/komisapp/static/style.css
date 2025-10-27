@@ -1,0 +1,7 @@
+table{
+    border-collapse: collapse;
+    .th-zamowienia, .td-zamowienia{
+        border: 2px solid black;
+    }
+}
+

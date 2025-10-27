@@ -23,8 +23,8 @@ from beautyapp.views import welcome, kadra, new
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', welcome, name="welcome"),
-    path('kadra', kadra, name="kadra"),
-    path('new', new, name="new")
+    path('/', welcome, name="welcome"),
+    path('kadra/', kadra, name="kadra"),
+    path('new/', new, name="new")
 
 ]

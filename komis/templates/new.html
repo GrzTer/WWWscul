@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="marka">Marka: </label><input type="text" name="marka" id="marka"><br>
+        <label for="model">Model: </label><input type="text" name="model" id="model"><br>
+        <label for="rocznik">Rocznik: </label><input type="text" name="rocznik" id="rocznik"><br>
+        <label for="kolor">Kolor: </label><input type="text" name="kolor" id="kolor"><br>
+        <label for="stan">Stan: </label><input type="text" name="stan" id="stan"><br>
+        <input type="submit" value="Zapisz">
+    </form>
+{% endblock %}

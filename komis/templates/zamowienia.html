@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Zamówienia</h1>
+    <table>
+    <tr><th class="th-zamowienia">data</th><th class="th-zamowienia">klient</th><th class="th-zamowienia">marka</th><th class="th-zamowienia">model</th></tr>
+    {% for zamowienie in zamowienia %}
+        <tr><td class="td-zamowienia">{{ zamowienie.data_zamowienia }}</td><td class="td-zamowienia">{{ zamowienie.klient }}</td><td class="td-zamowienia">{{ zamowienie.id_samochodu.marka }}</td><td class="td-zamowienia">{{ zamowienie.id_samochodu.model }}</td></tr>
+    {% endfor %}
+    </table>
+    <a href="{% url 'auta' %}">Nasza oferta</a>
+{% endblock %}

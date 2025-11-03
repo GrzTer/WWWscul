@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Paliwko</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Stacja benzynowa</h1>
+    <img src="{% static 'znak.png'%}"><br>
+    <span>Liczba dostępnych rodzajów paliwa - {{ paliwko.count }}</span>
+
+    <p>Ceny:</p>
+    <table>
+        <tr>
+            <td>Rodzaj paliwa</td>
+            <td>Cena</td>
+        </tr>
+        {% for pal in paliwko %}
+        <tr>
+            <td>{{ pal.rodzaj_paliwa }}</td>
+            <td>{{ pal.cena }} zł</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Oblicz ile paliwa zatankować</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="distance">Dystans (km):</label>
+        <input type="number" name="distance" id="distance" required><br><br>
+
+        <label for="consumption">Spalanie (l/100 km):</label>
+        <input type="number" name="consumption" id="consumption" required><br><br>
+
+        <button type="submit">Oblicz</button>
+    </form>
+
+    {% if result is not None %}
+        <p>Potrzebujesz {{ result|floatformat:2 }} litrów paliwa</p>
+    {% endif %}
+</body>
+</html>

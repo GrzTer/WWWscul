@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from komisapp.views import zamowienia, auta, new
+from komisapp.views import zamowienia, auta, new, edytuj, kasuj
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', zamowienia, name='zamowienia'),
     path('auta', auta, name='auta'),
     path('new', new, name='new'),
+    path('edytuj/<int:id>', edytuj, name='edytuj'),
+    path('kasuj/<int:id>', kasuj, name='kasuj'),
 ]

@@ -3,10 +3,19 @@
 
 {% block content %}
     <h1>Nasza oferta</h1>
-    <ol>
+    <table>
         {% for samochod in samochody %}
-            <li>{{ samochod.marka }} {{ samochod.model }} - rocznik: {{ samochod.rocznik }}</li>
+            <tr><td class="td-zamowienia">{{ samochod.marka }} {{ samochod.model }} - rocznik: {{ samochod.rocznik }}</td>
+            <td class="td-zamowienia"><form action="{% url 'edytuj' samochod.id %}" method="GET">
+                {% csrf_token %}
+                <button type="submit">edytuj</button>
+            </form></td>
+                <td class="td-zamowienia"><form action="{% url 'kasuj' samochod.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">kasuj</button>
+            </form></td>
+            </tr>
         {% endfor %}
-    </ol>
+    </table>
     <a href="{% url 'new' %}">Dodaj nowy</a>
 {% endblock %}
